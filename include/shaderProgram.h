@@ -1,6 +1,10 @@
 #ifndef SHADER_PROG_H
 #define SHADER_PROG_H
 
+#include <iostream>
+#include <string>
+#include <fstream>
+#include <sstream>
 #include <OpenGL/gl3.h>
 
 class ShaderProgram {
@@ -102,6 +106,6 @@ public:
     }
 
 
-}
+};
 
 #endif
