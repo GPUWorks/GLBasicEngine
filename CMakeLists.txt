@@ -9,7 +9,10 @@ set( CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules/"
 
 INCLUDE_DIRECTORIES( ${INCLUDE_DIR} )
 
-ADD_EXECUTABLE(app main.cpp)
+ADD_EXECUTABLE(app main.cpp
+    "${INCLUDE_DIR}/shaderProgram.h"
+    "${SOURCE_DIR}/shaderProgram.cpp"
+)
 
 # ------------------------------------------------------
 # FIND SFML
