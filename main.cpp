@@ -4,6 +4,7 @@
 #include <SFML/Window.hpp>
 #include <OpenGL/gl3.h>
 #include <vector>
+#include "shaderProgram.h"
 
 int main()
 {
@@ -15,6 +16,9 @@ int main()
     settings.minorVersion = 0;
 
     sf::Window window(sf::VideoMode(800, 600), "OpenGL", sf::Style::Default, settings);
+
+    ShaderProgram sp;
+    sp.loadShaders("../vsh.glsl", "../fsh.glsl");
 
     GLuint VAO;
     GLuint VBO;
@@ -67,6 +71,7 @@ int main()
         // clear the buffers
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+        glUseProgram(sp.program);
         // draw...
         glDrawArrays(GL_TRIANGLES, 0, 3);
 
