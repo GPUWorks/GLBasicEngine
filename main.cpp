@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 #include <OpenGL/gl3.h>
+#include <vector>
 
 int main()
 {
@@ -14,6 +15,23 @@ int main()
     settings.minorVersion = 0;
 
     sf::Window window(sf::VideoMode(800, 600), "OpenGL", sf::Style::Default, settings);
+
+    GLuint VAO;
+    GLuint VBO;
+
+    glGenVertexArrays(1, &VAO);
+    glBindVertexArray(VAO);
+
+    std::vector<float> points = {
+       -1.0f, -1.0f, 0.0f,
+       1.0f, -1.0f, 0.0f,
+       0.0f,  1.0f, 0.0f,
+    };
+
+    glGenBuffers(1, &VBO);
+    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(points) * points.size(), points.data(), GL_STATIC_DRAW);
+
 
    // run the main loop
     bool running = true;
