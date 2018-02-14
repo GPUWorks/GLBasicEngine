@@ -11,7 +11,7 @@ INCLUDE_DIRECTORIES( ${INCLUDE_DIR} )
 
 ADD_EXECUTABLE(app main.cpp
     "${INCLUDE_DIR}/shaderProgram.h"
-    "${INCLUDE_DIR}/shaderProgram.cpp"
+    "${SRC_DIR}/shaderProgram.cpp"
 )
 
 # ------------------------------------------------------
