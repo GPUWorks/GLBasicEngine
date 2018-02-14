@@ -101,5 +101,8 @@ GLuint ShaderProgram::loadShaders(const char * vertex_file_path,const char * fra
         std::cout << "Shader Deleted" << std::endl;
 
         return this->program;
-    
+}
+
+GLuint ShaderProgram::getShaderProgram() const {
+    return this->program;
 }

@@ -8,9 +8,12 @@ public:
     ShaderProgram();
     ~ShaderProgram();
 
-    GLuint program;
 
     GLuint loadShaders(const char * vertex_file_path,const char * fragment_file_path);
+    GLuint getShaderProgram() const;
+
+private:
+    GLuint program;
 
 
 };
