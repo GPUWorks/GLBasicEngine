@@ -102,6 +102,8 @@ public:
         glDeleteShader(VertexShaderID);
         glDeleteShader(FragmentShaderID);
 
+        std::cout << "Shader Deleted" std::endl;
+
         return this->program;
     }
 
