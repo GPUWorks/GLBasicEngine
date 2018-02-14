@@ -1,7 +1,9 @@
-#include "shaderProgram.h"
+#include "ShaderProgram.h"
+#include <iostream>
 #include <string>
 #include <fstream>
 #include <sstream>
+#include <vector>
 #include <OpenGL/gl3.h>
 
 ShaderProgram::ShaderProgram(){}

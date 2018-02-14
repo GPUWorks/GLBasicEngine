@@ -1,12 +1,12 @@
 #ifndef SHADER_PROG_H
 #define SHADER_PROG_H
 
-#include <iostream>
+#include <OpenGL/gl3.h>
 
 class ShaderProgram {
 public:
-    ShaderProgram(){}
-    ~ShaderProgram(){}
+    ShaderProgram();
+    ~ShaderProgram();
 
     GLuint program;
 
