@@ -2,6 +2,7 @@
 #define SHADER_PROG_H
 
 #include <OpenGL/gl3.h>
+#include <string>
 
 namespace Shader
 {
@@ -21,6 +22,11 @@ namespace Shader
          * Get the shader program
          */
         GLuint getShaderProgram() const;
+
+        /**--------------------
+         * Uniform Methods
+        ---------------------*/
+        void uniform1f(const std::string& name, float value );
 
 
     private:

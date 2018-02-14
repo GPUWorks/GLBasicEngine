@@ -108,5 +108,9 @@ namespace Shader
     GLuint ShaderProgram::getShaderProgram() const {
         return this->program;
     }
+    
+    void ShaderProgram::uniform1f(const std::string& name, float value ) {
+        // glUniform1f(, value);
+    }
 }
 
