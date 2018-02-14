@@ -6,11 +6,13 @@
 #include <vector>
 #include <OpenGL/gl3.h>
 
-ShaderProgram::ShaderProgram(){}
-ShaderProgram::~ShaderProgram(){}
+namespace Shader
+{
+    
+    ShaderProgram::ShaderProgram(){}
+    ShaderProgram::~ShaderProgram(){}
 
-
-GLuint ShaderProgram::loadShaders(const char * vertex_file_path,const char * fragment_file_path){
+    GLuint ShaderProgram::loadShaders(const char * vertex_file_path,const char * fragment_file_path){
         // Create the shaders
         GLuint VertexShaderID = glCreateShader(GL_VERTEX_SHADER);
         GLuint FragmentShaderID = glCreateShader(GL_FRAGMENT_SHADER);
@@ -101,8 +103,10 @@ GLuint ShaderProgram::loadShaders(const char * vertex_file_path,const char * fra
         std::cout << "Shader Deleted" << std::endl;
 
         return this->program;
+    }
+
+    GLuint ShaderProgram::getShaderProgram() const {
+        return this->program;
+    }
 }
 
-GLuint ShaderProgram::getShaderProgram() const {
-    return this->program;
-}

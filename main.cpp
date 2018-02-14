@@ -17,7 +17,7 @@ int main()
 
     sf::Window window(sf::VideoMode(800, 600), "OpenGL", sf::Style::Default, settings);
 
-    ShaderProgram sp;
+    Shader::ShaderProgram sp;
     sp.loadShaders("../vsh.glsl", "../fsh.glsl");
 
     GLuint VAO;
