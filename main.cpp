@@ -4,7 +4,7 @@
 #include <SFML/Window.hpp>
 #include <OpenGL/gl3.h>
 #include <vector>
-#include "shaderProgram.h"
+#include "shader/shaderProgram.h"
 
 int main()
 {
