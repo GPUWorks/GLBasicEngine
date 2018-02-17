@@ -99,10 +99,29 @@ int main()
     int c = 0;
     glm::mat4 trans = glm::translate(trans, glm::vec3(0.0f, 0.5f, 0.0f));
 
+    sf::Clock clock;
+    float delta = 0;
+
    // run the main loop
     bool running = true;
     while (running)
     {
+
+        std::cout << delta << std::endl;
+
+        glm::mat4 trans;
+        trans = glm::translate(trans, glm::vec3(0.1f, -0.5f, -5.0f));
+        trans = glm::rotate(trans, delta, glm::vec3(0.0f, 0.0f, 1.0f));
+
+
+        glm::mat4 projection = glm::perspective(glm::radians(45.0f), 800.0f / 600.0f, 0.1f, 100.0f);  
+
+        unsigned int proj = glGetUniformLocation(sp.getShaderProgram(), "projection");
+        glUniformMatrix4fv(proj, 1, GL_FALSE, glm::value_ptr(projection));
+
+        unsigned int transformLoc = glGetUniformLocation(sp.getShaderProgram(), "transform");
+        glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
+
         // handle events
         sf::Event event;
         while (window.pollEvent(event))
@@ -128,6 +147,8 @@ int main()
 
         // end the current frame (internally swaps the front and back buffers)
         window.display();
+
+        delta = clock.getElapsedTime().asSeconds();
     }
  
 
