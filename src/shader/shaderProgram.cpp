@@ -110,7 +110,9 @@ namespace Shader
     }
     
     void ShaderProgram::uniform1f(const std::string& name, float value ) {
-        // glUniform1f(, value);
+        glm::mat4 trans = glm::translate(trans, glm::vec3(std::sin(c) * -10, 0.5f, 0.0f));
+        unsigned int uniform1f = glGetUniformLocation(sp.getShaderProgram(), name);
+        glUniformMatrix4fv(uniform1f, 1, GL_FALSE, glm::value_ptr(trans));
     }
 }
 
