@@ -110,7 +110,7 @@ int main()
         std::cout << delta << std::endl;
 
         glm::mat4 trans;
-        trans = glm::translate(trans, glm::vec3(0.1f, -0.5f, std::sin(delta) * 10));
+        trans = glm::translate(trans, glm::vec3(0.1f, -0.5f, -5.0f));
         trans = glm::rotate(trans, delta, glm::vec3(0.4f, 0.8f, 1.0f));
 
 
@@ -121,6 +121,12 @@ int main()
 
         unsigned int transformLoc = glGetUniformLocation(sp.getShaderProgram(), "transform");
         glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
+
+
+        float clr = std::sin(delta);
+
+        unsigned int col = glGetUniformLocation(sp.getShaderProgram(), "color");
+        glUniform1f(col, clr * 10);
 
         // handle events
         sf::Event event;
