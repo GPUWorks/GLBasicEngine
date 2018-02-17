@@ -54,23 +54,13 @@ int main()
        (void*)0            // array buffer offset
     );
 
-    glm::vec4 vec(1.0f, 0.0f, 0.0f, 1.0f);
-    glm::mat4 trans;
-
-
     int c = 0;
+    glm::mat4 trans = glm::translate(trans, glm::vec3(0.0f, 0.5f, 0.0f));
 
    // run the main loop
     bool running = true;
     while (running)
     {
-
-        c++;
-        trans = glm::translate(trans, glm::vec3(std::sin(c) * -10, 0.5f, 0.0f));
-
-        unsigned int transformLoc = glGetUniformLocation(sp.getShaderProgram(), "transform");
-        glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
-
         // handle events
         sf::Event event;
         while (window.pollEvent(event))
