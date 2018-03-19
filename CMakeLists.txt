@@ -11,11 +11,16 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 INCLUDE_DIRECTORIES( ${INCLUDE_DIR} )
 
 ADD_EXECUTABLE(app main.cpp
+    # Shaders
     "${INCLUDE_DIR}/shader/shaderProgram.h"
     "${SOURCE_DIR}/shader/shaderProgram.cpp"
 
+    # Buffers
     "${INCLUDE_DIR}/buffer/buffer.h"
     "${SOURCE_DIR}/buffer/buffer.cpp"
+
+    # Enums
+    #"${INCLUDE_DIR}/buffer/buffer.h"
 )
 
 # ------------------------------------------------------
