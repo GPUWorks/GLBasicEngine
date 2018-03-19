@@ -8,6 +8,11 @@ class Buffer
 public:
     Buffer();
     ~Buffer();
+
+    /**
+     * Unbind the GL_ARRAY_BUFFER
+     */
+    void unbind();
 };
 
 #endif
