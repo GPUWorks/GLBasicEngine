@@ -15,6 +15,7 @@ public:
      */
     void unbind();
 private:
+    GLuint id;
     std::vector<float> verticies;
 
 };
