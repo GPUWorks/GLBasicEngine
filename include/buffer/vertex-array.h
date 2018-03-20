@@ -14,6 +14,18 @@ public:
      * @return the id
      */
     GLuint generate();
+
+    /**
+     * Bind the vertex array
+     */
+    void bind();
+
+    /**
+     * Unbind the vertex array
+     */
+    void unbind();
+
+
 private:
     GLuint id;
 
