@@ -23,6 +23,7 @@ ADD_EXECUTABLE(app main.cpp
 
     # Enums
     "${INCLUDE_DIR}/enum/bufferTarget.h"
+    "${INCLUDE_DIR}/enum/glPrimative.h"
 )
 
 # ------------------------------------------------------
