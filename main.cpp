@@ -6,6 +6,7 @@
 #include <vector>
 #include <cmath>
 #include "shader/shaderProgram.h"
+#include "buffer/buffer.h"
 
 
 #include <glm/glm.hpp>
@@ -81,12 +82,14 @@ int main()
         1.0f,-1.0f, 1.0f
     }; 
 
-    glGenBuffers(1, &VBO);
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(points) * points.size(), points.data(), GL_STATIC_DRAW);
+    Buffer b;
+    b.generate();
+    b.bind();
+    b.setData(points);
+    b.unbind();
 
     glEnableVertexAttribArray(0);
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    b.bind();
     glVertexAttribPointer(
        0,                  // attribute 0. No particular reason for 0, but must match the layout in the shader.
        3,                  // size
