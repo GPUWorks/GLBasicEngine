@@ -8,6 +8,8 @@ class VertexArray
 public:
     VertexArray();
     ~VertexArray();
+private:
+    GLuint id;
 
 };
 
