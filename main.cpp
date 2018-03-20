@@ -7,6 +7,7 @@
 #include <cmath>
 #include "shader/shaderProgram.h"
 #include "buffer/buffer.h"
+#include "buffer/vertex-array.h"
 
 
 #include <glm/glm.hpp>
@@ -31,8 +32,9 @@ int main()
     GLuint VAO;
     GLuint VBO;
 
-    glGenVertexArrays(1, &VAO);
-    glBindVertexArray(VAO);
+    VertexArray vertexArr;
+    vertexArr.generate();
+    vertexArr.bind();
 
        std::vector<float> points = {
         -1.0f,-1.0f,-1.0f, // triangle 1 : begin
@@ -100,7 +102,6 @@ int main()
     );
 
     int c = 0;
-    glm::mat4 trans = glm::translate(trans, glm::vec3(0.0f, 0.5f, 0.0f));
 
     sf::Clock clock;
     float delta = 0;
@@ -113,7 +114,6 @@ int main()
         glm::mat4 trans;
         trans = glm::translate(trans, glm::vec3(0.1f, -0.5f, -5.0f));
         trans = glm::rotate(trans, delta, glm::vec3(0.4f, 0.8f, 1.0f));
-
 
         glm::mat4 projection = glm::perspective(glm::radians(45.0f), 800.0f / 600.0f, 0.1f, 100.0f);  
 
