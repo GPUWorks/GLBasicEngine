@@ -10,7 +10,7 @@ GLuint Buffer::generate()
     return id;
 }
 
-GLuint Buffer::setData(const std::vector<float> data) {
+void Buffer::setData(const std::vector<float> data) {
     glBufferData(GL_ARRAY_BUFFER, sizeof(data) * data.size(), data.data(), GL_STATIC_DRAW);
 }
 
