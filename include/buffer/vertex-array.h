@@ -8,6 +8,12 @@ class VertexArray
 public:
     VertexArray();
     ~VertexArray();
+
+    /**
+     * Generate an vertex array
+     * @return the id
+     */
+    GLuint generate();
 private:
     GLuint id;
 
