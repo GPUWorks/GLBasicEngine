@@ -17,6 +17,19 @@ public:
     GLuint generate();
 
     /**
+     * Set the data of a vertex buffer
+     * @param data std::vector<float>
+     */
+    void setData(const std::vector<float> data) {
+        glBufferData(GL_ARRAY_BUFFER, sizeof(points) * points.size(), points.data(), GL_STATIC_DRAW);
+    } 
+
+    /**
+     * Bind a buffer
+     */
+    void bind();
+
+    /**
      * Unbind the GL_ARRAY_BUFFER
      */
     void unbind();
