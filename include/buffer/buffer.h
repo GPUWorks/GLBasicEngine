@@ -11,6 +11,12 @@ public:
     ~Buffer();
 
     /**
+     * Generate Buffer
+     * @return GLuint
+     */
+    GLuint generate();
+
+    /**
      * Unbind the GL_ARRAY_BUFFER
      */
     void unbind();
