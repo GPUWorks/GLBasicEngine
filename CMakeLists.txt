@@ -22,7 +22,7 @@ ADD_EXECUTABLE(app main.cpp
     "${SOURCE_DIR}/buffer/vertex-array.cpp"
 
     # Enums
-    #"${INCLUDE_DIR}/buffer/buffer.h"
+    "${INCLUDE_DIR}/enum/bufferTarget.h"
 )
 
 # ------------------------------------------------------
