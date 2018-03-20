@@ -18,6 +18,8 @@ ADD_EXECUTABLE(app main.cpp
     # Buffers
     "${INCLUDE_DIR}/buffer/buffer.h"
     "${SOURCE_DIR}/buffer/buffer.cpp"
+    "${INCLUDE_DIR}/buffer/vertex-array.h"
+    "${SOURCE_DIR}/buffer/vertex-array.cpp"
 
     # Enums
     #"${INCLUDE_DIR}/buffer/buffer.h"
