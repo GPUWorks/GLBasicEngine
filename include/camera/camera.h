@@ -4,6 +4,7 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include "Shader/shaderProgram.h"
 
 class Camera
 {
@@ -16,7 +17,7 @@ public:
      */
     void setup();
 
-    void update(float delta, Shader& sp);
+    void update(float delta, Shader::ShaderProgram& sp);
 
     /**
      * Get the view matrix

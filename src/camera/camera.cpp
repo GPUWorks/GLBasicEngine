@@ -15,7 +15,7 @@ void Camrea::setup() {
     );
 }
 
-void Camera::update(float delta, Shader& sp) {
+void Camera::update(float delta, Shader::ShaderProgram& sp) {
     unsigned int viewProjLoc = glGetUniformLocation(sp, "view");
     glUniformMatrix4fv(viewProjLoc, 1, GL_FALSE, glm::value_ptr(this->viewProjection));
 }
