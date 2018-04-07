@@ -8,6 +8,7 @@
 #include "shader/shaderProgram.h"
 #include "buffer/buffer.h"
 #include "buffer/vertex-array.h"
+#include "camera/camera.h"
 
 
 #include <glm/glm.hpp>
@@ -84,6 +85,9 @@ int main()
         1.0f,-1.0f, 1.0f
     }; 
 
+    Camera camera;
+    camera.setup();
+
     Buffer b;
     b.generate();
     b.bind();
@@ -112,13 +116,17 @@ int main()
     {
 
         glm::mat4 model;
-        model = glm::translate(model, glm::vec3(0.1f, -0.5f, -5.0f));
+        model = glm::translate(model, glm::vec3(0.1f, -0.5f, -10.0f));
         model = glm::rotate(model, delta, glm::vec3(0.4f, 0.8f, 1.0f));
 
         glm::mat4 projection = glm::perspective(glm::radians(45.0f), 800.0f / 600.0f, 0.1f, 100.0f);  
 
         unsigned int proj = glGetUniformLocation(sp.getShaderProgram(), "projection");
         glUniformMatrix4fv(proj, 1, GL_FALSE, glm::value_ptr(projection));
+
+
+        camera.update(delta, sp);
+
 
         unsigned int modelLoc = glGetUniformLocation(sp.getShaderProgram(), "model");
         glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
@@ -147,8 +155,10 @@ int main()
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         glUseProgram(sp.getShaderProgram());
+
         // draw...
         glDrawArrays(GL_TRIANGLES, 0, points.size() / 4);
+
 
         // end the current frame (internally swaps the front and back buffers)
         window.display();
