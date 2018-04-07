@@ -12,6 +12,13 @@ public:
     ~Camera();
 
     /**
+     * Setup the camera;
+     */
+    void setup();
+
+    void update(float delta);
+
+    /**
      * Get the view matrix
      * @return glm::mat4
      */
