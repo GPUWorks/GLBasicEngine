@@ -7,7 +7,7 @@ glm::mat4 Camera::getViewMatrix() {
     return this->viewProjection;
 }
 
-void Camrea::setup() {
+void Camera::setup() {
     this->viewProjection = glm::lookAt(
         this->cameraPos,
         this->cameraPos + this->cameraFront,
@@ -16,6 +16,6 @@ void Camrea::setup() {
 }
 
 void Camera::update(float delta, Shader::ShaderProgram& sp) {
-    unsigned int viewProjLoc = glGetUniformLocation(sp, "view");
+    unsigned int viewProjLoc = glGetUniformLocation(sp.getShaderProgram(), "view");
     glUniformMatrix4fv(viewProjLoc, 1, GL_FALSE, glm::value_ptr(this->viewProjection));
 }
