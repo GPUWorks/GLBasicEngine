@@ -86,7 +86,6 @@ int main()
     }; 
 
     Camera camera;
-    camera.setup();
 
     Buffer b;
     b.generate();
