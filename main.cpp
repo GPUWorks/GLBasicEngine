@@ -111,17 +111,17 @@ int main()
     while (running)
     {
 
-        glm::mat4 trans;
-        trans = glm::translate(trans, glm::vec3(0.1f, -0.5f, -5.0f));
-        trans = glm::rotate(trans, delta, glm::vec3(0.4f, 0.8f, 1.0f));
+        glm::mat4 model;
+        model = glm::translate(model, glm::vec3(0.1f, -0.5f, -5.0f));
+        model = glm::rotate(model, delta, glm::vec3(0.4f, 0.8f, 1.0f));
 
         glm::mat4 projection = glm::perspective(glm::radians(45.0f), 800.0f / 600.0f, 0.1f, 100.0f);  
 
         unsigned int proj = glGetUniformLocation(sp.getShaderProgram(), "projection");
         glUniformMatrix4fv(proj, 1, GL_FALSE, glm::value_ptr(projection));
 
-        unsigned int transformLoc = glGetUniformLocation(sp.getShaderProgram(), "transform");
-        glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
+        unsigned int modelLoc = glGetUniformLocation(sp.getShaderProgram(), "model");
+        glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 
 
         unsigned int col = glGetUniformLocation(sp.getShaderProgram(), "tcol");
