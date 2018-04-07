@@ -21,6 +21,10 @@ ADD_EXECUTABLE(app main.cpp
     "${INCLUDE_DIR}/buffer/vertex-array.h"
     "${SOURCE_DIR}/buffer/vertex-array.cpp"
 
+    # Camera
+    "${INCLUDE_DIR}/camera/camera.h"
+    "${SOURCE_DIR}/camera/camera.cpp"
+
     # Enums
     "${INCLUDE_DIR}/enum/bufferTarget.h"
     "${INCLUDE_DIR}/enum/glPrimative.h"
