@@ -16,7 +16,7 @@ public:
      */
     void setup();
 
-    void update(float delta);
+    void update(float delta, Shader& sp);
 
     /**
      * Get the view matrix
