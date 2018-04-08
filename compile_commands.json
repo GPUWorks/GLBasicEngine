@@ -1,0 +1,27 @@
+[
+{
+  "directory": "/Applications/MAMP/htdocs/c++/GLTranslate/build",
+  "command": "/usr/bin/clang++   -I/Applications/MAMP/htdocs/c++/GLTranslate/include -F/Library/Frameworks  -w -std=c++14   -o CMakeFiles/app.dir/main.cpp.o -c /Applications/MAMP/htdocs/c++/GLTranslate/main.cpp",
+  "file": "/Applications/MAMP/htdocs/c++/GLTranslate/main.cpp"
+},
+{
+  "directory": "/Applications/MAMP/htdocs/c++/GLTranslate/build",
+  "command": "/usr/bin/clang++   -I/Applications/MAMP/htdocs/c++/GLTranslate/include -F/Library/Frameworks  -w -std=c++14   -o CMakeFiles/app.dir/src/shader/shaderProgram.cpp.o -c /Applications/MAMP/htdocs/c++/GLTranslate/src/shader/shaderProgram.cpp",
+  "file": "/Applications/MAMP/htdocs/c++/GLTranslate/src/shader/shaderProgram.cpp"
+},
+{
+  "directory": "/Applications/MAMP/htdocs/c++/GLTranslate/build",
+  "command": "/usr/bin/clang++   -I/Applications/MAMP/htdocs/c++/GLTranslate/include -F/Library/Frameworks  -w -std=c++14   -o CMakeFiles/app.dir/src/buffer/buffer.cpp.o -c /Applications/MAMP/htdocs/c++/GLTranslate/src/buffer/buffer.cpp",
+  "file": "/Applications/MAMP/htdocs/c++/GLTranslate/src/buffer/buffer.cpp"
+},
+{
+  "directory": "/Applications/MAMP/htdocs/c++/GLTranslate/build",
+  "command": "/usr/bin/clang++   -I/Applications/MAMP/htdocs/c++/GLTranslate/include -F/Library/Frameworks  -w -std=c++14   -o CMakeFiles/app.dir/src/buffer/vertex-array.cpp.o -c /Applications/MAMP/htdocs/c++/GLTranslate/src/buffer/vertex-array.cpp",
+  "file": "/Applications/MAMP/htdocs/c++/GLTranslate/src/buffer/vertex-array.cpp"
+},
+{
+  "directory": "/Applications/MAMP/htdocs/c++/GLTranslate/build",
+  "command": "/usr/bin/clang++   -I/Applications/MAMP/htdocs/c++/GLTranslate/include -F/Library/Frameworks  -w -std=c++14   -o CMakeFiles/app.dir/src/camera/camera.cpp.o -c /Applications/MAMP/htdocs/c++/GLTranslate/src/camera/camera.cpp",
+  "file": "/Applications/MAMP/htdocs/c++/GLTranslate/src/camera/camera.cpp"
+}
+]
