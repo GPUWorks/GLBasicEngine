@@ -156,7 +156,7 @@ int main()
         glUseProgram(sp.getShaderProgram());
 
         // draw...
-        glDrawArrays(GL_TRIANGLES, 0, points.size() / 4);
+        glDrawArrays(GL_TRIANGLES, 0, 36 );
 
 
         // end the current frame (internally swaps the front and back buffers)
