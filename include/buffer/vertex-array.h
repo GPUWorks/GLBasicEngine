@@ -15,6 +15,7 @@ public:
      */
     GLuint generate();
 
+
     /**
      * Bind the vertex array
      */
@@ -30,6 +31,11 @@ public:
      */
     void destroy();
 
+    /**
+     * Wrapper for glEnableVertexArray and glVertexAtribPointer
+     * @param pos [description]
+     */
+    void enableAttrib(int pos, int size = 3, int stride = 0);
 
 private:
     GLuint id;
