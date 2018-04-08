@@ -9,6 +9,7 @@ class Buffer
 {
 public:
     Buffer();
+    Buffer(BufferTarget target);
     ~Buffer();
 
     /**
@@ -21,7 +22,7 @@ public:
      * Set the data of a vertex buffer
      * @param data std::vector<float>
      */
-    void setData(BufferTarget target, const std::vector<float> data);
+    void setData(const std::vector<float> data);
 
     /**
      * Bind a buffer

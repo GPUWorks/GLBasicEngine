@@ -3,6 +3,9 @@
 #include <OpenGL/gl3.h>
 
 Buffer::Buffer(){}
+Buffer::Buffer(BufferTarget target){
+    this->target = target;
+}
 Buffer::~Buffer(){}
 
 GLuint Buffer::generate()
@@ -12,15 +15,20 @@ GLuint Buffer::generate()
 }
 
 void Buffer::setData(const std::vector<float> data) {
-    glBufferData(BufferTarget::ARRAY_BUFFER, sizeof(data) * data.size(), data.data(), GL_STATIC_DRAW);
+    glBufferData(this->target, sizeof(data) * data.size(), data.data(), GL_STATIC_DRAW);
 }
 
 void Buffer::bind()
 {
-    glBindBuffer(BufferTarget::ARRAY_BUFFER, this->id);
+    glBindBuffer(this->target, this->id);
 }
 
 void Buffer::unbind()
 {
-    glBindBuffer(BufferTarget::ARRAY_BUFFER, 0);
+    glBindBuffer(this->target, 0);
+}
+
+void Buffer::destroy()
+{
+    glDeleteBuffers(1, &this->id);
 }
