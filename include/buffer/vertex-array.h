@@ -25,6 +25,11 @@ public:
      */
     void unbind();
 
+    /**
+     * Delete the VAO
+     */
+    void destroy();
+
 
 private:
     GLuint id;
