@@ -24,6 +24,7 @@ int main()
     settings.majorVersion = 3;
     settings.minorVersion = 0;
 
+    const int MAX = 10;
 
     sf::Window window(sf::VideoMode(800, 600), "OpenGL", sf::Style::Default, settings);
 
@@ -109,6 +110,17 @@ int main()
     sf::Clock clock;
     float delta = 0;
 
+    std::vector<glm::vec3> modelPosition;
+
+    for (int i = 0; i <= MAX - 1; ++i)
+    {
+        float x = rand() % 50;
+        float y = rand() % 50;
+        float z = rand() % 50;
+        glm::vec3 v(x,y,z);
+        modelPosition.push_back(v);
+    }
+
    // run the main loop
     bool running = true;
     while (running)
@@ -152,6 +164,16 @@ int main()
 
         // clear the buffers
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+
+        for (int i = 0; i <= MAX - 1; ++i)
+        {
+            glm::mat4 model;
+            model = glm::translate(model, modelPosition.at(i));
+            unsigned int modelLoc = glGetUniformLocation(sp.getShaderProgram(), "model");
+            glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+            glDrawArrays(GL_POINTS, 0, 36 );
+        }
 
         glUseProgram(sp.getShaderProgram());
 
