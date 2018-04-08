@@ -3,6 +3,7 @@
 
 #include <OpenGL/gl3.h>
 #include <vector>
+#include "enum/bufferTarget.h"
 
 class Buffer
 {
@@ -20,7 +21,7 @@ public:
      * Set the data of a vertex buffer
      * @param data std::vector<float>
      */
-    void setData(const std::vector<float> data);
+    void setData(BufferTarget target, const std::vector<float> data);
 
     /**
      * Bind a buffer
@@ -31,9 +32,16 @@ public:
      * Unbind the GL_ARRAY_BUFFER
      */
     void unbind();
+
+    /**
+     * Delete the vertex buffer
+     */
+    void destroy();
+
 private:
     GLuint id;
     std::vector<float> verticies;
+    BufferTarget target;
 
 };
 
