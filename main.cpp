@@ -26,7 +26,7 @@ int main()
 
     const int MAX = 50;
 
-    sf::Window window(sf::VideoMode(800, 600), "OpenGL", sf::Style::Default, settings);
+    sf::Window window(sf::VideoMode(1024, 768), "OpenGL", sf::Style::Default, settings);
 
     Shader::ShaderProgram sp;
     sp.loadShaders("../assets/vsh.glsl", "../assets/fsh.glsl");
