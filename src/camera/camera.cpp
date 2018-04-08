@@ -29,8 +29,6 @@ void Camera::update(float delta, Shader::ShaderProgram& sp) {
     front.z = sin(glm::radians((float)mpos.x)) * cos(glm::radians((float)mpos.y));
     this->cameraFront = glm::normalize(front);
 
-    std::cout << mpos.x  << " " << mpos.y << std::endl;
-
     unsigned int viewProjLoc = glGetUniformLocation(sp.getShaderProgram(), "view");
     glUniformMatrix4fv(viewProjLoc, 1, GL_FALSE, glm::value_ptr(this->viewProjection));
 }
